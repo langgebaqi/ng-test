@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+<header>
+    <h1>用户注册</h1>
+</header>
+<section>
+    <form ng-controller="registerController" name="registerForm">
+        <div class="input">
+            <label for="user_name">用户名:</label>
+            <input id="user_name" name="user_name" ng-model="user.name" type="text" required ng-pattern="/^w+/">
+            <span class="error" ng-show="registerForm.user_name.$dirty && registerForm.user_name.$error.required">必须填写用户名</span>
+        </div>
+        <div class="input">
+            <label for="user_password">密码:</label>
+            <input id="user_password" name="user_password" ng-model="user.password" type="password" required ng-pattern="/^[a-z]{6,12}$/" />
+            <span class="error" ng-show="registerForm.user_password.$dirty && registerForm.user_password.$error.required">必须填写密码</span>
+        </div>
+        <div class="input">
+            <label for="user_repassword">确认:</label>
+            <input id="user_repassword" name="user_repassword" ng-model="user.repassword" type="password" required ng-pattern="/^[a-z]{6,16}$/">
+            <span class="error" ng-show="registerForm.user_repassword.$dirty && registerForm.user_repassword.$error.required">必须填写密码</span>
+        </div>
+        <div>
+            <span ng-click="submit()">注册</span>
+        </div>
+        <div>
+            <ul>
+                <li>表单校验结果:</li>
+                <li ng-repeat="result in registerForm">
+                    <span>{{result.$dirty ? "输入": "未输入"}}</span>
+                    <span>{{result.$error.required ? "空值":"非空值"}}</span>
+                    <span>{{result.$error.pattern ? "不合法" :"合法"}}</span>
+                </li>
+            </ul>
+        </div>
+    </form>
+</section>
+</body>
+</html>
