@@ -4,7 +4,6 @@
 var app = angular.module('myApp', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider
-            .when("/PageTable", "/PageTable")
             .otherwise("/Index");
         $stateProvider
             .state('/Index', {
@@ -18,48 +17,39 @@ var app = angular.module('myApp', ['ui.router'])
                         templateUrl: 'view/home/footer.html',
                         controller: 'clockController'
                     },
-                    'body': {
-                        templateUrl: 'view/home/body.html'
-                    },
-                    'nav': {
-                        templateUrl: 'view/PageTable.html'
+                    'body':{
+                        templateUrl:'view/home/body.html'
                     }
                 }
             })
-            .state("/PageTable", {
-                url: '/PageTable',
-                templateUrl: 'view/pageTable.html'
-            })
-            .state("/PageTable.home", {
-                url: '/Home',
-                templateUrl: 'view/home.html'
-            })
-            .state("/PageTable.user", {
+            .state("/Index.user", {
                 url: '/User',
-                templateUrl: 'view/user.html'
+                templateUrl:'view/user.html'
             })
-            .state("/PageTable.user.register", {
+            .state("/Index.user.register", {
                 url: '/Register',
                 templateUrl: 'view/user/register.html',
                 controller: 'registerController'
             })
-            .state("/PageTable.user.login", {
+            .state("/Index.user.login", {
                 url: '/Login',
                 templateUrl: 'view/user/login.html',
                 controller: 'loginController'
             })
-            .state("/PageTable.user.forget", {
+            .state("/Index.user.forget", {
                 url: '/Forget',
                 templateUrl: 'view/user/forget.html',
                 controller: 'forgetController'
             })
-            .state("/PageTable.book", {
+            .state("/Index.book", {
                 url: '/Book',
-                templateUrl: 'view/book.html'
+                templateUrl:'view/book.html',
+                controller:'bookController'
             })
-            .state("/PageTable.detail", {
+            .state("/Index.detail", {
                 url: '/Detail/:id',
-                templateUrl: 'view/book/detail.html'
+                templateUrl: 'view/book/detail.html',
+                controller: 'detailController'
             })
     })
     .controller('registerController', function ($scope) {
@@ -83,7 +73,7 @@ var app = angular.module('myApp', ['ui.router'])
 
         }
     })
-    .controller('bookController', function ($scope, $state) {
+    .controller('bookController', function ($scope) {
         $scope.getbooks = function (n) {
             if (n) {
                 return [
@@ -112,8 +102,8 @@ var app = angular.module('myApp', ['ui.router'])
             return b.id == $stateParams.id;
         }
     })
-    .controller('clockController', function ($scope,$interval) {
+    .controller('clockController', function ($scope, $interval) {
         $interval(function () {
-            $scope.curTime=new Date();
-        },500)
-    })
+            $scope.curTime = new Date();
+        }, 500)
+    });
