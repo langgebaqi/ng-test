@@ -1,0 +1,23 @@
+<div class="directive-panel">
+    <div>
+        <h3>编写自己的directive</h3>
+    </div>
+    <div ng-controller="dr_controller_1">
+        <h5>pagination</h5>
+        <div my-pagination page-options="data"></div>
+    </div>
+    <div ng-controller="dr_controller_2">
+        <h5>accordion</h5>
+        <div my-accordion></div>
+    </div>
+    <div ng-controller="dr_controller_3">
+        <my-menu menu-options="menu">
+        </my-menu>
+        <div ui-view></div>
+    </div>
+    <div ng-controller="dr_controller_4">
+        <h5>table</h5>
+        <my-table table-options="table"></my-table>
+    </div>
+</div>
+

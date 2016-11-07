@@ -1,0 +1,17 @@
+<div ng-controller="pagerController">
+    <h4>玩家信息</h4>
+    <div>
+        <div ui-grid="gridOptions" class="gridStyle">
+        </div>
+    </div>
+    <ul uib-pagination total-items="totalItems"
+        ng-model="currentPage" ng-change="pageChanged()"
+        items-per-page="perPage" max-size="maxsize"
+        boundary-links="true" force-ellipses="true"
+        boundary-link-numbers="true"
+        direction-links="true" num-pages="numPages" rotate="true"
+        previous-text="<<" next-text=">>" first-text="首页" last-text="尾页"
+    ></ul>
+    <pre>currentPage: {{currentPage}}/{{numPages}}</pre>
+    <button ng-click="setPage()">跳转到</button><input type="number" ng-model="target"/>
+</div>

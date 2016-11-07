@@ -1,0 +1,17 @@
+<div ng-controller="tableController">
+    <table class="table">
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>工作</td>
+            <td>住址</td>
+        </tr>
+        <tr ng-repeat="friend in friends">
+            <td>{{friend.name}}</td>
+            <td>{{friend.age}}</td>
+            <td>{{friend.job}}</td>
+            <td>{{friend.addr}}</td>
+            <td><button class="btn-danger" ng-click="deleteFriend($index)">删除</button></td>
+        </tr>
+    </table>
+</div>
