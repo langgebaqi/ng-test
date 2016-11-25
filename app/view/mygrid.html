@@ -1,5 +1,5 @@
 <div ng-controller="myGridController" style="height:800px">
-    <table class="jht-grid jht-grid jht-grid-hover table-striped table-bordered">
+    <table class="jht-grid jht-grid-hover jht-grid-border">
         <tr>
             <th>编号</th>
             <th>姓名</th>
@@ -23,12 +23,14 @@
         </div>
         <div class="jht-grid-dropdown-pagination">
             <span class="jht-pagination-text" ng-show="pager.currentPage>=pager.min" ng-click="pre()">上一页</span>
-            <span class="jht-pagination-item" ng-class="{'jht-pagination-item-active':pager.currentPage==page.index}"
+            <span class="jht-pagination-item"
+                  ng-class="{'jht-pagination-item-active':pager.currentPage==page.index}"
                   ng-repeat="page in pager.pages" ng-click="onchange(page.index)">{{page.index}}</span>
             <span class="jht-pagination-text" ng-click="next()" ng-show="pager.currentPage<=pager.max">下一页</span>
             共{{pager.totalPage}}页
             <div class="jht-grid-dropdown-pagination-onJump">
-                跳转到第<input type="text" ng-model="pager.jumpPage"/>页,<span class="jht-pagination-text" ng-click="onJump()">确定</span>
+                跳转到第<input type="text" ng-model="pager.jumpPage"/>页,<span class="jht-pagination-text"
+                                                                          ng-click="onJump()">确定</span>
             </div>
         </div>
     </div>
