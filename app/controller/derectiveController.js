@@ -28,10 +28,10 @@ angular.module('myApp')
     .controller('dr_controller_4', function ($scope) {
         $scope.table = {
             data:[
-                {'姓名':'徐畅',age:'15'},
-                {'姓名':'速度',age:'25'},
-                {'姓名':'三维',age:'35'},
-                {'姓名':'拉法基',age:'121'}
+                {'name':'徐畅',age:'15'},
+                {'name':'速度',age:'25'},
+                {'name':'三维',age:'35'},
+                {'name':'拉法基',age:'121'}
             ]
         }
     })

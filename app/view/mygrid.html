@@ -1,0 +1,35 @@
+<div ng-controller="myGridController" style="height:800px">
+    <table class="jht-grid jht-grid jht-grid-hover table-striped table-bordered">
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>成绩</th>
+            <th>地址</th>
+        </tr>
+        <tr ng-repeat="std in students">
+            <td>{{std.id}}</td>
+            <td>{{std.name}}</td>
+            <td>{{std.age}}</td>
+            <td>{{std.score}}</td>
+            <td>{{std.address}}</td>
+        </tr>
+    </table>
+    <div class="jht-grid-dropdown">
+        <div class="jht-grid-dropdown-total">
+            每页显示
+            <select ng-model="pager.perPage" ng-options="a for a in pager.perPages">
+            </select>条记录，共{{pager.total}}条。
+        </div>
+        <div class="jht-grid-dropdown-pagination">
+            <span class="jht-pagination-text" ng-show="pager.currentPage>=pager.min" ng-click="pre()">上一页</span>
+            <span class="jht-pagination-item" ng-class="{'jht-pagination-item-active':pager.currentPage==page.index}"
+                  ng-repeat="page in pager.pages" ng-click="onchange(page.index)">{{page.index}}</span>
+            <span class="jht-pagination-text" ng-click="next()" ng-show="pager.currentPage<=pager.max">下一页</span>
+            共{{pager.totalPage}}页
+            <div class="jht-grid-dropdown-pagination-onJump">
+                跳转到第<input type="text" ng-model="pager.jumpPage"/>页,<span class="jht-pagination-text" ng-click="onJump()">确定</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -60,4 +60,12 @@ angular.module('myApp')
             }
             return result;
         }
+        this.randomId=function (n) {
+            var result="";
+            while(n>0){
+                n--;
+                result +=this.random(1,9);
+            }
+            return result;
+        }
     })

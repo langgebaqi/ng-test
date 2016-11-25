@@ -1,34 +1,37 @@
-<div class="navPanel sidebar navbar-inverse">
-    <ul class="nav">
-        <li>
-            <a ui-sref="/Index" class="icon"><span class="glyphicon glyphicon-home"></span>HOME</a>
-        </li>
-        <li>
-            <a ui-sref=".form" class="icon"><span class="glyphicon glyphicon-th"></span>Form</a>
-        </li>
-        <li>
-            <a ui-sref=".login" class="icon"><span class="glyphicon glyphicon-link "></span>Login</a>
-        </li>
-        <li>
-            <a ui-sref=".table" class="icon"><span class="glyphicon glyphicon-stats"></span>演示Table</a>
-        </li>
-        <li>
-            <a ui-sref=".grid" class="icon"><span class="glyphicon glyphicon-new-window"></span>uigrid</a>
-        </li>
-        <li>
-            <a ui-sref=".chart" class="icon"><span class="glyphicon glyphicon-calendar"></span>chart</a>
-        </li>
-        <li>
-            <a ui-sref=".pager" class="icon"><span class="glyphicon glyphicon-arrow-up"></span>Pager</a>
-        </li>
-        <li>
-            <a ui-sref=".bootstrap" class="icon"><span class="glyphicon glyphicon-tasks"></span>Bootstrap UI插件</a>
-        </li>
-        <li>
-            <a ui-sref=".service" class="icon"><span class="glyphicon glyphicon-user"></span>user</a>
-        </li>
-        <li>
-            <a ui-sref=".myDirective" class="icon"><span class="glyphicon glyphicon-plane"></span>directive</a>
-        </li>
-    </ul>
+<div class="collapse navbar-collapse " ng-controller="navController">
+        <ul class="nav navbar-nav side-nav" ng-show="sidebar">
+            <li>
+                <a ui-sref=".form" class="icon"><span class="glyphicon glyphicon-th"></span>Form</a>
+            </li>
+            <li>
+                <a ui-sref=".login" class="icon"><span class="glyphicon glyphicon-link "></span>Login</a>
+            </li>
+            <li>
+                <a ui-sref=".table" class="icon"><span class="glyphicon glyphicon-stats"></span>演示Table</a>
+            </li>
+            <li>
+                <a ui-sref=".grid" class="icon"><span class="glyphicon glyphicon-new-window"></span>uigrid</a>
+            </li>
+            <li>
+                <a ui-sref=".chart" class="icon"><span class="glyphicon glyphicon-calendar"></span>chart</a>
+            </li>
+            <li>
+                <a ui-sref=".pager" class="icon"><span class="glyphicon glyphicon-arrow-up"></span>Pager</a>
+            </li>
+            <li>
+                <a ui-sref=".bootstrap" class="icon"><span class="glyphicon glyphicon-tasks"></span>Bootstrap UI插件</a>
+            </li>
+            <li>
+                <a ui-sref=".service" class="icon"><span class="glyphicon glyphicon-user"></span>user</a>
+            </li>
+            <li>
+                <a ui-sref=".myDirective" class="icon"><span class="glyphicon glyphicon-plane"></span>directive</a>
+            </li>
+            <li>
+                <a ui-sref=".modal" class="icon"><span></span>modal</a>
+            </li>
+            <li>
+                <a ui-sref=".myGrid" class="icon"><span></span>myGrid</a>
+            </li>
+        </ul>
 </div>

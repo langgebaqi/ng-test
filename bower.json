@@ -16,10 +16,11 @@
     "angular-messages": "^1.5.8",
     "angular-ui-grid": "^3.2.9",
     "ng-dialog": "^0.6.4",
-    "textAngular": "^1.5.12",
     "angular-chart.js": "^1.0.3",
     "angular-animate": "^1.5.8",
     "angular-touch": "^1.5.8",
-    "angular-bootstrap": "^2.2.0"
+    "angular-bootstrap": "^2.2.0",
+    "textAngular": "^1.5.12",
+    "angular-smart-table": "^2.1.8"
   }
 }

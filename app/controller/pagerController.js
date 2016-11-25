@@ -4,8 +4,17 @@
 angular.module('myApp')
     .controller('pagerController', function ($scope) {
         $scope.gridOptions = {
-            data: 'myData'
+            data: 'myData',
+            columnDefs:[
+                { field:'id',displayName:'学号' },
+                {field:'name',displayName:'姓名'}
+            ]
         };
+        $scope.myData = [
+            {id: '10086', name: 'xc'},
+            {id: '10086', name: 'xc'},
+            {id: '10086', name: 'xc'}
+        ]
         $scope.totalItems = 175;
         $scope.currentPage = 1;
         $scope.perPage = 5;

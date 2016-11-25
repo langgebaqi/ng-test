@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<html lang="zh-cn" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<html lang="zh-cn" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>
-<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<html lang="zh-cn" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="zh-cn" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.min.css">
     <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.min.css">
-    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" />
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-plain.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css"/>
     <link rel="stylesheet" href="app.css">
     <script src="./bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -28,12 +32,16 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browser.qq.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
-
-<div ui-view="header"></div>
-<div ui-view="nav"></div>
-<div ui-view="center" class="main"></div>
-<div ui-view="footer"></div>
-
+<div class="wrapper">
+    <!--    头部和侧边导航-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div ui-view="header" class="navbar-header"></div>
+        <div ui-view="nav" class="collapse navbar-collapse navbar-ex1-collapse"></div>
+    </div>
+    <!--    主体-->
+    <div ui-view="center" class="page-wrapper"></div>
+    <!--    底部-->
+</div>
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
@@ -41,6 +49,8 @@
 <script src="./bower_components/angular-route/angular-route.js"></script>
 <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!--angular-ngGrid-->
 <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
 <!--ng-dialog-->
@@ -52,7 +62,16 @@
 <script src="bower_components/angular-touch/angular-touch.min.js"></script>
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-
+<!--angular-mock.js-->
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<!--messages-->
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<!--textAngular-->
+<script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+<script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+<script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+<!--smarttable-->
+<script src="bower_components/angular-smart-table/dist/smart-table.min.js"></script>
 <script src="./app.js"></script>
 
 <!--controller-->
@@ -68,6 +87,10 @@
 <script src="controller/serviceController.js"></script>
 <script src="controller/bootstrapController.js"></script>
 <script src="controller/derectiveController.js"></script>
+<script src="controller/homeController.js"></script>
+<script src="controller/modal.js"></script>
+<script src="controller/myGrid.js"></script>
+<script src="controller/nav.js"></script>
 <!--service-->
 <script src="service/randomFactory.js"></script>
 <!--filter-->
@@ -75,6 +98,7 @@
 <script src="template/template.js"></script>
 <!--directive-->
 <script src="directive/pagination.js"></script>
+
 <script src="./components/version/version.js"></script>
 <script src="./components/version/version-directive.js"></script>
 <script src="./components/version/interpolate-filter.js"></script>

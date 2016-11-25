@@ -1,22 +1,8 @@
-<div class="headPanel" ng-controller="headController">
-    <div class="logoPanel">
-        <a ui-sref="/Index" class="navbar-brand">
-            <img src="components/img/logo.png">
-        </a>
-    </div>
-    <div class="headbar">
-        <div class="head-title">
-            <h1>angularJS Demo</h1>
-        </div>
-        <div class="icon">
-            <a ui-sref="/Index"><span class="glyphicon glyphicon-refresh"></span></a>
-        </div>
-        <div class="icon">
-            <a ng-click="loginDialog()"><span>登录</span></a>
-        </div>
-        <div class="icon">
-            <a ng-click="registerDialog()"><span>注册</span></a>
-        </div>
-    </div>
+<div class="navbar-header">
+    <a class="navbar-brand" ui-sref="/Index">home</a>
 </div>
-<div class="clearfix"></div>
+<ul class="nav navbar-right top-nav">
+    <li>
+        <a class="dropdown"><i class="fa fa-address-book"></i></a>
+    </li>
+</ul>

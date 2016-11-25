@@ -4,11 +4,16 @@
 angular.module('myApp')
     .controller('formController', function ($scope) {
         $scope.user = {
-            name: 'xuchang',
-            age: 23,
-            email: '986079819@qq.com'
         };
         $scope.submit = function () {
-            console.log($scope.user.name);
+            if(!$scope.user.age){
+                console.log("输入不合法")
+            }
         }
-    });
+        $scope.htmlcontent='<p>hello</p>'
+    })
+    .controller('imageController',function ($scope) {
+        $scope.$watch('$scope.image',function () {
+            console.log($scope.image)
+        })
+    })

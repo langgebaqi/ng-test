@@ -1,4 +1,38 @@
-<div ng-controller="uigridController">
-    <div ui-grid="gridOptions" class="gridStyle">
-    </div>
+<div ng-controller="smartgridController" class="gridStyle">
+    <table st-table="rowCollection" class="table table-striped">
+        <thead>
+        <tr>
+            <th st-sort="firstName">first name</th>
+            <th st-sort="lastName">last name</th>
+            <th st-sort="birthDate">birth date</th>
+            <th st-sort="balance">balance</th>
+            <th>email</th>
+        </tr>
+        <tr>
+            <th>
+                <input st-search="firstName" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+            </th>
+            <th colspan="4">
+                <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in rowCollection">
+            <td>{{row.firstName | uppercase}}</td>
+            <td>{{row.lastName}}</td>
+            <td>{{row.birthDate | date}}</td>
+            <td>{{row.balance | currency}}</td>
+            <td><a ng-href="mailto:{{row.email}}">email</a></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3" class="text-center">
+                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="10" st-template="pagination.custom.html"></div>
+            </td>
+            <td colspan="3">每页显示<select ng-model="itemsByPage" ng-options="a in items" class="form-control"></select>条</td>
+        </tr>
+        </tfoot>
+    </table>
 </div>

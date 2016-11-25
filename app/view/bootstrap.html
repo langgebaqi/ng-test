@@ -10,6 +10,30 @@
             </div>
         </uib-accordion>
     </div>
-    <div ng-controller="modalController">
+</div>
+<div id="dialog" ng-controller="dialogController">
+    <button ng-click="formDialog()" class="btn btn-danger">填写表单</button>
+</div>
+<div ng-controller="collapseController" style="margin-top:10px;">
+    <button ng-click="isshow=!isshow">collapse显示控制</button>
+    <div uib-collapse="isshow">
+        <div class="well well-lg">压力山大</div>
     </div>
+</div>
+<div ng-controller="dateparserController">
+    <p>{{date| date:"yyyy MM dd"}}</p>
+</div>
+<div ng-controller="datepickerController">
+    <div uib-datepicker ng-model="dt" datepicker-options="options"></div>
+</div>
+<div ng-controller="carouselController">
+<div uib-carousel active="active" interval="interval">
+    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" no-wrap="noWrapSlides">
+        <img ng-src="{{slide.imgsrc}}">
+        <div class="carousel-caption">
+            <h3>{{slide.id}}</h3>
+            <p>{{slide.text}}</p>
+        </div>
+    </div>
+</div>
 </div>
